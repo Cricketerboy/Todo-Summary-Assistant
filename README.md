@@ -34,6 +34,10 @@ git clone https://github.com/Cricketerboy/Todo-Summary-Assistant.git
 - **COHERE_API_KEY** = your-cohere-api-key
 - **SLACK_WEBHOOK_URL** = https://hooks.slack.com/services/your/webhook/url
 
+---
+## Base URL for APIs
+- **https://todo-summary-assistant-tykp.onrender.com**
+
 
 
 
