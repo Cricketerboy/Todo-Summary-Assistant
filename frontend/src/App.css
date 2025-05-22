@@ -1,38 +1,176 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  padding: 3rem 1rem;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+h1 {
+  text-align: center;
+  color: #2d3748;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+
+form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+button {
+  background-color: #4f46e5;
   color: white;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover:not(:disabled) {
+  background-color: #4338ca;
+  transform: scale(1.03);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:disabled {
+  background-color: #c7d2fe;
+  cursor: not-allowed;
+}
+
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.todo-list li {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-list li:hover {
+  background: #f3f4f6;
+}
+
+
+.summary-btn {
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.status-message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  background-color: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+  font-weight: 500;
+  text-align: center;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  text-align: center;
+}
+
+.modal-box h3 {
+  margin-top: 0;
+  color: #4f46e5;
+}
+
+.modal-box p {
+  margin: 1rem 0;
+  color: #333;
+}
+
+.modal-box button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+@media (max-width: 640px) {
+  form {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    width: 100%;
   }
 }
