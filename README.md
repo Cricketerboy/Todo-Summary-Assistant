@@ -24,7 +24,7 @@ Built with **React.js**, **Node.js**, **Express**, and **Supabase**.
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/yourusername/todo-summary-backend.git](https://github.com/Cricketerboy/Todo-Summary-Assistant.git)
+git clone "https://github.com/Cricketerboy/Todo-Summary-Assistant.git"
 ```
 ---
 ## ⚙️ .ENV Configuration
