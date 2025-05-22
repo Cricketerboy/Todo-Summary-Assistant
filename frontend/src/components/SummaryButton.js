@@ -1,5 +1,4 @@
 import React from 'react';
-import { Circles } from 'react-loader-spinner';
 
 export default function SummaryButton({ onSummarize, status, loading, summaryText }) {
   const [showModal, setShowModal] = React.useState(false);
@@ -17,14 +16,13 @@ export default function SummaryButton({ onSummarize, status, loading, summaryTex
       </button>
 
       {loading && (
-        <div className="spinner">
-          <Circles height="40" width="40" color="#6366f1" />
+        <div className="spinner-container">
+          <div className="custom-spinner"></div>
         </div>
       )}
 
       {status && <div className="status-message">{status}</div>}
 
-      {/* Modal for showing summary */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-box">

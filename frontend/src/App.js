@@ -9,15 +9,18 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
+  const [fetching, setFetching] = useState(true); // ✅ new state
   const [summaryText, setSummaryText] = useState('');
 
   const loadTodos = async () => {
+    setFetching(true); // ✅ start spinner
     try {
       const res = await getTodos();
       setTodos(res.data);
     } catch {
       setStatus('❌ Failed to load todos.');
     }
+    setFetching(false); // ✅ stop spinner
   };
 
   const handleAdd = async (title) => {
@@ -64,18 +67,27 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <h1>📝 Todo Summary Assistant</h1>
-        <TodoForm onAdd={handleAdd} />
-        <TodoList todos={todos} onDelete={handleDelete} />
-        <SummaryButton
-          onSummarize={handleSummarize}
-          status={status}
-          loading={loading}
-          summaryText={summaryText}
-        />
-      </div>
+    <div className="container">
+      <h1>📝 Todo Summary Assistant</h1>
+      <TodoForm onAdd={handleAdd} />
+      
+      {fetching ? (
+        <div className="spinner-container">
+          <div className="custom-spinner"></div>
+        </div>
+      ) : (
+        <>
+          <TodoList todos={todos} onDelete={handleDelete} />
+          <SummaryButton
+            onSummarize={handleSummarize}
+            status={status}
+            loading={loading}
+            summaryText={summaryText}
+          />
+        </>
+      )}
     </div>
+  </div>  
   );
 }
 
