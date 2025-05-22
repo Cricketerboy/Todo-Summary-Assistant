@@ -24,7 +24,16 @@ Built with **React.js**, **Node.js**, **Express**, and **Supabase**.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/todo-summary-backend.git
-cd todo-summary-backend
+git clone [https://github.com/yourusername/todo-summary-backend.git](https://github.com/Cricketerboy/Todo-Summary-Assistant.git)
+```
+---
+## ⚙️ .ENV Configuration
+- **PORT** =5000
+- **SUPABASE_URL** = https://your-project.supabase.co
+- **SUPABASE_SERVICE_ROLE_KEY** = your-service-role-key
+- **COHERE_API_KEY** = your-cohere-api-key
+- **SLACK_WEBHOOK_URL** = https://hooks.slack.com/services/your/webhook/url
+
+
 
 
